@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configuration for Vercel deployment
   reactStrictMode: true,
-};
+  experimental: { appDir: true }  // <- add this line
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
