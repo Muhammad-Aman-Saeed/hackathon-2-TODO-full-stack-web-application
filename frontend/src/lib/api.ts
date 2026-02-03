@@ -1,4 +1,6 @@
 // Centralized API client with JWT handling
+import { Task, User } from '@/types';
+
 class ApiClient {
   private baseUrl: string;
   

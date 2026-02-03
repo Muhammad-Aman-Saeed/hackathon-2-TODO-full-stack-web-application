@@ -2,7 +2,17 @@
   "name": "hackathon-2-root",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "build": "cd frontend && npm run build",
+    "dev": "cd frontend && npm run dev"
+  },
   "workspaces": [
     "frontend"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  },
+  "overrides": {
+    "eslint": "$eslint"
+  }
 }

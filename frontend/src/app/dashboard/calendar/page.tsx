@@ -81,7 +81,7 @@ export default function CalendarPage() {
   const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
   const daysWithPadding = Array(firstDayOfMonth).fill(null).concat(days);
 
-  const handleDeleteTask = async (id: string) => {
+  const handleDeleteTask = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       try {
         await apiClient.deleteTask(id);

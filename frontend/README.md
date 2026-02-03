@@ -1,121 +1,90 @@
-# Hackathon Todo App - Frontend
+# TODO Application Frontend
 
-A professional, modern Next.js 16+ frontend application with TypeScript, Tailwind CSS, and premium UI design. Features include authentication, task management, and responsive design with dark mode support.
+This is the frontend for the full-stack TODO application built with Next.js 16+, React 19, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- 🎨 **Premium UI Design**: Soft color palette (slate, indigo, emerald), subtle shadows, glassmorphism effects
-- 🔐 **Authentication**: Secure user registration and login with JWT tokens
-- 📋 **Task Management**: Create, read, update, and delete tasks with filtering
-- 🌙 **Dark Mode**: Toggle between light and dark themes with system preference detection
-- 📱 **Responsive**: Fully responsive design for mobile, tablet, and desktop
-- ⚡ **Performance**: Optimized with animations and smooth transitions
-- 🧭 **Navigation**: Intuitive sidebar navigation for enhanced UX
+- User authentication (sign up, sign in, logout)
+- Task management (create, update, delete, mark as complete)
+- Dashboard with task overview
+- Calendar view for tasks
+- Profile management
+- Responsive design with dark/light mode
 
 ## Tech Stack
 
-- **Framework**: Next.js 16+ with App Router
-- **Language**: TypeScript 5+
-- **Styling**: Tailwind CSS 3+ with custom premium design
-- **Icons**: Lucide React
-- **Animations**: Framer Motion
-- **State Management**: React Hooks
-- **API Client**: Custom implementation with automatic JWT handling
+- Next.js 16+
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion (for animations)
+- Lucide React (icons)
+- Better Auth (authentication)
 
-## Getting Started
+## Environment Variables
 
-### Prerequisites
+To run this project, you will need to set the following environment variable:
 
-- Node.js 18+
-- npm or yarn
+```env
+NEXT_PUBLIC_API_BASE_URL=https://amansaeed-hackathon-2-todo-full-stack-application.hf.space/api
+```
 
-### Installation
+## Deployment
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd frontend
-   ```
+This application is designed to be deployed on Vercel.
 
-2. Install dependencies:
+### Deploy to Vercel
+
+1. Push your code to a GitHub repository
+2. Go to [Vercel](https://vercel.com)
+3. Click "New Project" and import your repository
+4. Set the environment variable:
+   - `NEXT_PUBLIC_API_BASE_URL`: `https://amansaeed-hackathon-2-todo-full-stack-application.hf.space/api`
+5. Click "Deploy"
+
+### Manual Deployment
+
+If deploying manually:
+
+1. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Create a `.env.local` file in the root directory with the following:
-   ```
-   NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
-   ```
-
-4. Run the development server:
+2. Build the application:
    ```bash
-   npm run dev
+   npm run build
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+3. Run the production server:
+   ```bash
+   npm run start
+   ```
+
+## API Integration
+
+This frontend connects to the backend API deployed at:
+`https://amansaeed-hackathon-2-todo-full-stack-application.hf.space/api`
+
+The API provides endpoints for:
+- Authentication (`/auth/login`, `/auth/register`, `/auth/token`)
+- Task management (`/tasks/`, `/tasks/{id}`, `/tasks/{id}/complete`)
 
 ## Project Structure
 
 ```
 frontend/
-├── public/                 # Static assets
+├── public/               # Static assets
 ├── src/
-│   ├── app/               # Next.js App Router pages
-│   │   ├── layout.tsx     # Root layout
-│   │   ├── page.tsx       # Home page
-│   │   ├── auth/          # Authentication pages
-│   │   │   ├── sign-in/   # Sign-in page
-│   │   │   └── sign-up/   # Sign-up page
-│   │   └── dashboard/     # Dashboard page
-│   ├── components/        # Reusable UI components
-│   │   ├── ui/            # Base UI components
-│   │   ├── TaskCard.tsx   # Beautiful task card component
-│   │   ├── TaskForm.tsx   # Form for creating/editing tasks
-│   │   ├── Modal.tsx      # Reusable modal component
-│   │   ├── Navbar.tsx     # Navigation component
-│   │   └── Sidebar.tsx    # Sidebar navigation
-│   ├── lib/               # Utilities and API client
-│   │   ├── api.ts         # Centralized API client with JWT handling
-│   │   └── utils.ts       # General utility functions
-│   ├── hooks/             # Custom React hooks
-│   │   └── useAuth.ts     # Authentication hook
-│   ├── styles/            # Global styles
-│   │   └── globals.css    # Tailwind imports and global styles
-│   └── types/             # TypeScript type definitions
-│       └── index.ts       # Common type definitions
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-└── README.md
+│   ├── app/             # Next.js 16+ app router pages
+│   ├── components/      # Reusable React components
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utility functions and API client
+│   └── types/           # TypeScript type definitions
+├── next.config.js       # Next.js configuration
+├── package.json         # Dependencies and scripts
+└── README.md            # This file
 ```
-
-## Environment Variables
-
-- `NEXT_PUBLIC_API_BASE_URL`: The base URL for the backend API (default: http://localhost:8000/api)
-
-## Scripts
-
-- `npm run dev`: Start the development server
-- `npm run build`: Build the application for production
-- `npm run start`: Start the production server
-- `npm run lint`: Run ESLint
-
-## API Integration
-
-The frontend communicates with the backend API at the configured base URL. The API client in `src/lib/api.ts` handles authentication by automatically attaching JWT tokens to requests.
-
-## Design System
-
-### Color Palette
-- Primary: Indigo shades (#0ea5e9, #0284c7, #0369a1)
-- Secondary: Emerald shades (#14b8a6, #0d9488, #0f766e)
-- Neutral: Slate shades (#64748b, #475569, #334155)
-
-### Design Elements
-- Rounded corners: Use `rounded-xl`, `rounded-2xl`, `rounded-3xl` for soft edges
-- Subtle shadows: Apply `shadow-soft` for premium feel
-- Smooth transitions: Use `transition-all duration-300` for interactions
-- Glassmorphism: Use `bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm` with `shadow-glass`
 
 ## Contributing
 
@@ -124,7 +93,3 @@ The frontend communicates with the backend API at the configured base URL. The A
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License.

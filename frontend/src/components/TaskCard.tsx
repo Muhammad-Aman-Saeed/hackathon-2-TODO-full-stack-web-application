@@ -7,9 +7,9 @@ import { CheckCircle, Circle, MoreVertical } from 'lucide-react';
 
 interface TaskCardProps {
   task: Task;
-  onToggleComplete: (id: string, completed: boolean) => void;
+  onToggleComplete: (id: number, completed: boolean) => void;
   onEdit?: (task: Task) => void;
-  onDelete?: (id: string) => void;
+  onDelete?: (id: number) => void;
 }
 
 export const TaskCard = ({ task, onToggleComplete, onEdit, onDelete }: TaskCardProps) => {

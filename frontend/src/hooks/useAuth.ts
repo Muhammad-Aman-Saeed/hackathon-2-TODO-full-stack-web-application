@@ -33,7 +33,12 @@ export const useAuth = () => {
               const userData = await response.json();
 
               setAuthState({
-                user: { id: userData.user_id }, // Simplified user object
+                user: {
+                  id: userData.user_id,
+                  email: userData.email || '', // Use empty string if email is not provided
+                  createdAt: userData.created_at || new Date().toISOString(),
+                  updatedAt: userData.updated_at || new Date().toISOString(),
+                }, // User object with required properties
                 isAuthenticated: true,
                 isLoading: false,
                 error: null,

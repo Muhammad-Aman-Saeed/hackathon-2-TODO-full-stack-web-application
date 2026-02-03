@@ -128,7 +128,7 @@ export default function TasksPage() {
     }
   };
 
-  const handleToggleComplete = async (id: string, completed: boolean) => {
+  const handleToggleComplete = async (id: number, completed: boolean) => {
     try {
       const updatedTask = await apiClient.toggleComplete(id, completed);
       setTasksState(prev => ({
@@ -143,7 +143,7 @@ export default function TasksPage() {
     }
   };
 
-  const handleDeleteTask = async (id: string) => {
+  const handleDeleteTask = async (id: number) => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       try {
         await apiClient.deleteTask(id);

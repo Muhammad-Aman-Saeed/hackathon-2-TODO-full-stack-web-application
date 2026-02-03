@@ -4,6 +4,7 @@ export interface User {
   id: string;
   email: string;
   name?: string;
+  bio?: string;
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
 }
