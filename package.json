@@ -2,6 +2,10 @@
   "name": "hackathon-2-root",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "build": "cd frontend && npm run build",
+    "vercel-build": "cd frontend && npm install --legacy-peer-deps && npm run build"
+  },
   "workspaces": [
     "frontend"
   ],
